@@ -1,0 +1,1 @@
+SELECT * FROM people WHERE product_id = $1;
