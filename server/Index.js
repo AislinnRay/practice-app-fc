@@ -13,7 +13,7 @@ app.use(express.json())
 //Database Connection
 massive({
     connectionString: CONNECTION_STRING,
-    ssl: { rejectUnauthorized: false },
+    ssl: { rejectUnauthorized: false }, // ssl = secure sockets layer
 })
     .then(db => {
     app.set('db', db) //order of 'db' and db matters
@@ -30,8 +30,8 @@ massive({
     // PUT = edit/update (can pass a body)
 app.get("/api/product/:id", productCtrl.getProduct)
 app.get("/api/products", productCtrl.getProducts)
-app.post("/api/product", productCtrl.addProduct)
-app.put("/api/product/:id", productCtrl.editProduct)
+app.post("/api/product", productCtrl.postProduct) //postProduct is matching the name of the post_product file
+app.put("/api/product/:id", productCtrl.putProduct)
 app.delete("/api/product/:id", productCtrl.deleteProduct)
 
 
