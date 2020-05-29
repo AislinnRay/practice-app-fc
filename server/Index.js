@@ -21,18 +21,18 @@ massive({
     app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}`)
     )
 }) 
-.catch(err => console.log(err))
+.catch((err) => console.log(err))
 
 //Endpoints
 	// GET = get (cannot pass back a body)
 	// POST = create/add (can pass a body)
 	// Delete = delete (cannot pass back a body)
     // PUT = edit/update (can pass a body)
-app.get("/api/product/:id", productCtrl.getProduct)
+app.get("/api/product/:product_id", productCtrl.getProduct)
 app.get("/api/products", productCtrl.getProducts)
 app.post("/api/product", productCtrl.postProduct) //postProduct is matching the name of the post_product file
-app.put("/api/product/:id", productCtrl.putProduct)
-app.delete("/api/product/:id", productCtrl.deleteProduct)
+app.put("/api/product/:product_id", productCtrl.putProduct)
+app.delete("/api/product/:product_id", productCtrl.deleteProduct)
 
 
  

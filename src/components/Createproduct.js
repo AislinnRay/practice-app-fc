@@ -4,9 +4,9 @@ class Createproduct extends Component {
     constructor(){
         super()
         this.state= {
-            productName: '',
-            productPrice: '',
-            productImage: ''
+            name: '',
+            price: '',
+            image: ''
 
         }
     }
@@ -16,25 +16,25 @@ class Createproduct extends Component {
     }
 
     render(){
-        const {productName, productPrice, productImage} = this.state
+        const {name, price, image} = this.state
         const {submitProduct} = this.props;
         return(
             <div>
-                <input input name='productName'
-                    value={productName}
+                <input input name='name'
+                    value={name}
                     placeholder='enter name'
                     onChange={(e) => this.handleChange(e.target)}></input>
-                <input name='productPrice'
-                    value={productPrice}
+                <input name='price'
+                    value={price}
                     placeholder='enter price'
                     onChange={(e) => this.handleChange(e.target)}></input>
-                <input name='productImage'
-                    value={productImage}
+                <input name='image'
+                    value={image}
                     placeholder='enter image URL'
                     onChange={(e) => this.handleChange(e.target)}></input>
                 <button onClick = {() => {
-                    submitProduct({productName, productPrice, productImage})
-                    this.setState({productName: '', productPrice: '', productImage: ''})
+                    submitProduct({name, price, image})
+                    this.setState({name: '', price: '', image: ''})
                 }}>Submit</button>
             </div>
         )

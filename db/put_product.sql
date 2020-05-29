@@ -1,1 +1,2 @@
-UPDATE product SET product_name = $2, product_price = $3, product_image= $4 WHERE product_id = $1;
+UPDATE products SET name = $2, price = $3, image= $4 WHERE product_id = $1;
+SELECT * FROM products;
