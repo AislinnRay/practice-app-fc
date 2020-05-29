@@ -10,9 +10,9 @@ class Products extends Component{
     }
 
     render(){
-        const {deleteProduct} = this.props
+        const {deleteProduct, editProduct} = this.props
         const list = this.props.list.map((element, index) => {
-            return <Product key={index} product={element} deleteProduct={deleteProduct}/>
+            return <Product key={index} product={element} deleteProduct={deleteProduct} editProduct = {editProduct}/>
         })
         return(
             <div>{list}</div>
