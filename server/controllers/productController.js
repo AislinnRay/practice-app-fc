@@ -18,7 +18,7 @@ module.exports = {
     postProduct: (req, res) => {
         const db = req.app.get("db")
         const { name, price, image } = req.body;
-        db.add_product(name, price, image)
+        db.post_product(name, price, image)
             .then(() => res.sendStatus(200))
             .catch((err) => res.status(500).send(err))
     },
@@ -27,7 +27,7 @@ module.exports = {
         const db = req.app.get("db")
         const { product_id } = req.params
         const { name, price, image} = req.body;
-        db.edit_product(product_id, name, price, image)
+        db.put_product(product_id, name, price, image)
             .then(() => res.sendStatus(200))
             .catch((err) => res.status(500).send(err))
     },
@@ -35,7 +35,7 @@ module.exports = {
     deleteProduct: (req, res) => {
         const db = req.app.get("db")
         const { product_id } = req.params
-        db.delete_person(product_id)
+        db.delete_product(product_id)
             .then(() => res.sendStatus(200))
             .catch((err) => res.status(500).send(err))
     },
